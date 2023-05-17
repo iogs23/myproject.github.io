@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<style>
+    .box{
+        width: 400px;
+        margin:100px auto;
+        border-bottom: 1px solid #ccc;
+        
+        position: relative;
+    }
+    .box input{
+        width: 270px;
+        height: 30px;
+        border: 0;
+        outline: none;
+    }
+    .box i{
+        position: absolute;
+       bottom: 5px;
+        right: 20%;
+    }
+    .box span{
+        position: absolute;
+        right: 0;
+        bottom: 3px;
+    }
+</style>
+<body>
+    <div class="box">
+        <label for="">
+            <i id='eye'class="fa-solid fa-eye"></i>
+        </label>
+        <input type="password" id='pwd' placeholder="請輸入密碼">
+        <span>忘記密碼</span>
+        
+        
+    </div>
+    <script>
+        let eye = document.getElementById('eye')
+        let pwd = document.getElementById('pwd')
+        let flag = 0
+        eye.onclick = function(){
+            //點擊之後flag必須變化
+            if(flag === 0){
+                pwd.type = 'text'
+                flag = 1
+                eye.className = 'fa-solid fa-eye-slash'
+
+            }else{
+                pwd.type = 'password'
+                flag = 0
+                eye.className = 'fa-solid fa-eye'
+            }
+            
+        }
+    </script>
+    
+</body>
+</html>

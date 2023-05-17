@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .
+        
+      
+
+       
+       
+
+    </style>
+</head>
+<body>
+   
+   
+  <div class="wrap">
+      <table>
+          <thead>
+              <tr>
+                  <th>
+                    <input type="checkbox" name="" id="cball">
+                    
+
+
+                  </th>
+                  <th>商品</th>
+                  <th>價格</th>
+              </tr>
+          </thead>
+          <tbody id='j_tb'>
+              <tr>
+                  <td>
+                    <input type="checkbox" >
+                  </td>
+                  <td>iphone</td>
+                  <td>20000</td>
+              </tr>
+
+              <tr>
+                  <td>
+                    <input type="checkbox" >
+                  </td>
+                  <td>ipad</td>
+                  <td>30000</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="checkbox" >
+                </td>
+                <td>apple watch</td>
+                <td>10000</td>
+             </tr>
+
+          </tbody>
+      </table>
+  </div>
+  <script>
+      let cball = document.getElementById('cball')
+      let j_tb = document.getElementById('j_tb')
+      let j_tbs = j_tb.getElementsByTagName('input')
+    //   註冊事件
+    cball.onclick = function(){
+        // console.log(this.checked);
+        for(let i=0; i<j_tbs.length; i++){
+          j_tbs[i].checked = this.checked
+        }
+    }
+    // 下面複選框須要全部選中，全選按鈕才能選中
+    for(let i=0; i<j_tbs.length; i++){
+      j_tbs[i].onclick = function(){
+        // flag控制全選按鈕
+        let flag = true
+        // 每次點複選框，檢查下面所有按鈕是否選中
+        for(let i=0; i<j_tbs.length; i++){
+          if(!j_tbs[i].checked){
+            flag = false
+            break;//退出for loop, 只要有一個沒有選中，剩下不用檢查
+          }
+        }
+        cball.checked = flag
+      }
+
+    }
+  </script>
+   
+  
+    
+</body>
+</html>
